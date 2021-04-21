@@ -1,0 +1,52 @@
+{
+  "name": "@sergeymakinen/vite-plugin-html-minimize",
+  "version": "1.0.0-alpha.0",
+  "description": "HTML minimizer/minifier for Vite",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergeymakinen/vite-plugin-html-minimize.git"
+  },
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "html",
+    "minimize",
+    "minify"
+  ],
+  "author": "Sergey Makinen <sergey@makinen.ru>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sergeymakinen/vite-plugin-html-minimize/issues"
+  },
+  "homepage": "https://github.com/sergeymakinen/vite-plugin-html-minimize",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "files": [
+    "dist/"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "peerDependencies": {
+    "vite": "^2.0.0"
+  },
+  "dependencies": {
+    "@types/html-minifier-terser": "^5.1.1",
+    "html-minifier-terser": "^5.1.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.22",
+    "@types/node": "^14.14.41",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.5.5",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4",
+    "vite": "^2.0.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "prepare" : "npm run build",
+    "prepublishOnly" : "npm test"
+  }
+}
