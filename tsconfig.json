@@ -2,8 +2,11 @@
   "compilerOptions": {
     "outDir": "dist",
     "declaration": true,
-    "module": "esnext",
-    "target": "esnext",
+    "lib": [
+      "ES2019"
+    ],
+    "module": "commonjs",
+    "target": "ES2019",
     "moduleResolution": "node",
     "esModuleInterop": true,
     "strict": true
