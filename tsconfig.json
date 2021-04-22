@@ -11,8 +11,7 @@
     "esModuleInterop": true,
     "strict": true
   },
-  "exclude": [
-    "dist",
-    "node_modules"
+  "include": [
+    "index.ts"
   ]
 }

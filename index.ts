@@ -12,15 +12,21 @@ const defaultOptions: MinifierOptions = {
   useShortDoctype: true,
 }
 
-export type Filter = RegExp | ((fileName: string) => boolean);
-
 export interface Options {
-  filter?: Filter;
+  /**
+   * Regular expression or function to filter assets by file name.
+   * @default /\.html?$/
+   */
+  filter?: RegExp | ((fileName: string) => boolean);
 
+  /**
+   * Minifier options passed to html-minifier-terser.
+   * @default { collapseWhitespace: true, keepClosingSlash: true, removeAttributeQuotes: true, removeComments: true, removeRedundantAttributes: true, removeScriptTypeAttributes: true, removeStyleLinkTypeAttributes: true, useShortDoctype: true }
+   */
   minifierOptions?: MinifierOptions;
 }
 
-const filterFileName = (fileName: string, filter: Filter | undefined) => {
+const filterFileName = (fileName: string, filter: RegExp | ((fileName: string) => boolean) | undefined) => {
   if (filter instanceof RegExp) {
     return filter.test(fileName)
   }
