@@ -1,7 +1,7 @@
 # @sergeymakinen/vite-plugin-html-minimize
 
 [![tests](https://github.com/sergeymakinen/vite-plugin-html-minimize/workflows/tests/badge.svg)](https://github.com/sergeymakinen/vite-plugin-html-minimize/actions?query=workflow%3Atests)
-[![npm](https://img.shields.io/npm/v/sergeymakinen/vite-plugin-html-minimize)](https://www.npmjs.com/package/@sergeymakinen/vite-plugin-html-minimize)
+[![npm](https://img.shields.io/npm/v/@sergeymakinen/vite-plugin-html-minimize)](https://www.npmjs.com/package/@sergeymakinen/vite-plugin-html-minimize)
 [![codecov](https://codecov.io/gh/sergeymakinen/vite-plugin-html-minimize/branch/main/graph/badge.svg)](https://codecov.io/gh/sergeymakinen/vite-plugin-html-minimize)
 
 This plugin is a HTML minimizer/minifier for Vite
