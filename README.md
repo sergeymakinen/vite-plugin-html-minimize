@@ -37,7 +37,10 @@ export default {
   ```js
   {
     collapseWhitespace: true,
+    html5: true,
     keepClosingSlash: true,
+    minifyCSS: true,
+    minifyJS: true,
     removeAttributeQuotes: true,
     removeComments: true,
     removeRedundantAttributes: true,
