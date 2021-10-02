@@ -1,6 +1,6 @@
 {
   "name": "@sergeymakinen/vite-plugin-html-minimize",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0",
   "description": "HTML minimizer/minifier for Vite",
   "repository": {
     "type": "git",
@@ -46,7 +46,7 @@
   "scripts": {
     "build": "tsc",
     "test": "jest",
-    "prepare" : "npm run build",
-    "prepublishOnly" : "npm test"
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test"
   }
 }
