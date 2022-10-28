@@ -3,6 +3,7 @@
     "outDir": "dist",
     "declaration": true,
     "lib": [
+      "DOM",
       "ES2019"
     ],
     "module": "commonjs",

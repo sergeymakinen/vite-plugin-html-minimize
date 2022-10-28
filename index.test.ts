@@ -1,5 +1,5 @@
-import {NormalizedOutputOptions, OutputAsset, OutputBundle, OutputChunk, PluginContext} from 'rollup'
-import htmlMinimize, {Options} from './index'
+import { NormalizedOutputOptions, OutputAsset, OutputBundle, OutputChunk, PluginContext } from 'rollup'
+import htmlMinimize, { Options } from './index'
 
 const mockAssetBundle = (fileName: string, source: string): OutputBundle => {
   const bundle: OutputBundle = {}
@@ -37,7 +37,12 @@ const mockChunkBundle = (fileName: string, source: string): OutputBundle => {
   return bundle
 }
 const generateBundle = (bundle: OutputBundle, options?: Options): OutputBundle => {
-  htmlMinimize(options).generateBundle?.call(null as unknown as PluginContext, null as unknown as NormalizedOutputOptions, bundle, false)
+  htmlMinimize(options).generateBundle!.call(
+    null as unknown as PluginContext,
+    null as unknown as NormalizedOutputOptions,
+    bundle,
+    false
+  )
   return bundle
 }
 
@@ -67,9 +72,13 @@ test('index.xhtml is minimized with custom filter', () => {
   const input = `<div id="foo"></div>`
   const output = `<div id=foo></div>`
 
-  expect((generateBundle(mockAssetBundle('index.xhtml', input), {
-    filter: () => true,
-  })['index.xhtml'] as OutputAsset).source).toBe(output)
+  expect(
+    (
+      generateBundle(mockAssetBundle('index.xhtml', input), {
+        filter: () => true,
+      })['index.xhtml'] as OutputAsset
+    ).source
+  ).toBe(output)
 })
 
 test('chunks are ignored', () => {
