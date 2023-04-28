@@ -8,9 +8,10 @@ const mockAssetBundle = (fileName: string, source: string): OutputBundle => {
     fileName: fileName,
     isAsset: true,
     name: fileName,
+    needsCodeReference: false,
     source: source,
     type: 'asset',
-  }
+  } as OutputAsset
   return bundle
 }
 
@@ -29,19 +30,24 @@ const mockChunkBundle = (fileName: string, source: string): OutputBundle => {
     isDynamicEntry: false,
     isEntry: false,
     isImplicitEntry: false,
+    map: null,
+    moduleIds: [],
     modules: {},
     name: fileName,
     referencedFiles: [],
     type: 'chunk',
-  }
+  } as OutputChunk
   return bundle
 }
 const generateBundle = (bundle: OutputBundle, options?: Options): OutputBundle => {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   htmlMinimize(options).generateBundle!.call(
     null as unknown as PluginContext,
     null as unknown as NormalizedOutputOptions,
     bundle,
-    false
+    false,
   )
   return bundle
 }
@@ -77,7 +83,7 @@ test('index.xhtml is minimized with custom filter', () => {
       generateBundle(mockAssetBundle('index.xhtml', input), {
         filter: () => true,
       })['index.xhtml'] as OutputAsset
-    ).source
+    ).source,
   ).toBe(output)
 })
 

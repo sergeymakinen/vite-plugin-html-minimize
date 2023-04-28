@@ -1,4 +1,4 @@
-import { minify, Options as MinifierOptions } from 'html-minifier-terser'
+import { Options as MinifierOptions, minify } from 'html-minifier-terser'
 import { Plugin } from 'vite'
 
 const defaultOptions: MinifierOptions = {
@@ -43,7 +43,6 @@ export default (options: Options = {}): Plugin => {
   const { filter = /\.html?$/, minifierOptions = defaultOptions } = options
 
   return {
-    name: 'html-minimize',
     apply: 'build',
     enforce: 'post',
     generateBundle(_, bundle) {
@@ -53,5 +52,6 @@ export default (options: Options = {}): Plugin => {
         }
       }
     },
+    name: 'html-minimize',
   }
 }
