@@ -23,7 +23,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Install dependencies
-        run: npm ci
+        run: npm install
       - name: Test
         run: npm test -- --coverage=true
       - name: Upload coverage to Codecov

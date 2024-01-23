@@ -43,9 +43,9 @@
     "html-minifier-terser": "^7.2.0"
   },
   "devDependencies": {
-    "@sergeymakinen/eslint-config": "^1.0.0",
-    "@sergeymakinen/prettier-config": "^1.0.0",
-    "@sergeymakinen/tsconfig": "^1.0.3",
+    "@sergeymakinen/eslint-config": "^1.0.1",
+    "@sergeymakinen/prettier-config": "^1.0.1",
+    "@sergeymakinen/tsconfig": "^1.0.4",
     "@types/jest": "^29.5.11",
     "@types/node": "^18.19.8",
     "jest": "^29.7.0",
