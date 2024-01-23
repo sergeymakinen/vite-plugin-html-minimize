@@ -1,19 +1,19 @@
 {
   "compilerOptions": {
     "outDir": "dist",
-    "declaration": true,
-    "lib": [
-      "DOM",
-      "ES2019"
-    ],
-    "module": "commonjs",
-    "target": "ES2019",
+    "target": "ES2020",
+    "module": "ES2020",
     "moduleResolution": "node",
+    "strict": true,
+    "declaration": true,
+    "sourceMap": true,
+    "noImplicitOverride": true,
+    "noUnusedLocals": true,
     "esModuleInterop": true,
-    "strict": true
+    "baseUrl": ".",
+    "resolveJsonModule": true
   },
   "include": [
-    "index.ts",
-    "index.test.ts"
+    "**/*.ts"
   ]
 }

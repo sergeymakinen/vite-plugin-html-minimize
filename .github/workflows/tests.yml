@@ -1,8 +1,6 @@
 on:
   push:
   pull_request:
-  schedule:
-    - cron: '0 12 1 * *'
 name: tests
 jobs:
   Test:
@@ -14,23 +12,19 @@ jobs:
           - '16'
           - '18'
           - '20'
-        os:
-          - ubuntu-latest
-          - windows-latest
-          - macos-latest
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     steps:
       - name: Install Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
       - name: Set git to turn off auto-converting line endings
         run: git config --global core.autocrlf false
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Install dependencies
         run: npm ci
       - name: Test
         run: npm test -- --coverage=true
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v3

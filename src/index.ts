@@ -1,4 +1,4 @@
-import { Options as MinifierOptions, minify } from 'html-minifier-terser'
+import { minify, Options as MinifierOptions } from 'html-minifier-terser'
 import { Plugin } from 'vite'
 
 const defaultOptions: MinifierOptions = {
@@ -29,26 +29,28 @@ export interface Options {
   minifierOptions?: MinifierOptions
 }
 
-const filterFileName = (fileName: string, filter: RegExp | ((fileName: string) => boolean) | undefined) => {
+function filterFileName(fileName: string, filter: RegExp | ((fileName: string) => boolean) | undefined): boolean {
   if (filter instanceof RegExp) {
     return filter.test(fileName)
   }
+
   if (typeof filter === 'function') {
     return filter(fileName)
   }
+
   return true
 }
 
-export default (options: Options = {}): Plugin => {
+export default function htmlMinimizePlugin(options: Options = {}): Plugin {
   const { filter = /\.html?$/, minifierOptions = defaultOptions } = options
 
   return {
     apply: 'build',
     enforce: 'post',
-    generateBundle(_, bundle) {
+    async generateBundle(_, bundle) {
       for (const outBundle of Object.values(bundle)) {
         if (outBundle.type === 'asset' && filterFileName(outBundle.fileName, filter)) {
-          outBundle.source = minify(outBundle.source as string, minifierOptions)
+          outBundle.source = await minify(outBundle.source as string, minifierOptions)
         }
       }
     },

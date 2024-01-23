@@ -1,77 +1,12 @@
 {
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "project": "tsconfig.json",
-    "sourceType": "module"
-  },
-  "plugins": [
-    "prettier",
-    "sort-keys-fix",
-    "@typescript-eslint/eslint-plugin"
-  ],
   "extends": [
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended"
+    "@sergeymakinen/eslint-config"
   ],
+  "parserOptions": {
+    "project": "tsconfig.eslint.json"
+  },
   "root": true,
-  "rules": {
-    "prettier/prettier": [
-      "error"
-    ],
-    "sort-keys-fix/sort-keys-fix": "error",
-    "sort-imports": [
-      "error",
-      {
-        "ignoreDeclarationSort": true
-      }
-    ],
-    "padding-line-between-statements": [
-      "error",
-      {
-        "blankLine": "always",
-        "prev": [
-          "const",
-          "let",
-          "var"
-        ],
-        "next": "*"
-      },
-      {
-        "blankLine": "any",
-        "prev": [
-          "const",
-          "let",
-          "var"
-        ],
-        "next": [
-          "const",
-          "let",
-          "var"
-        ]
-      },
-      {
-        "blankLine": "always",
-        "prev": [
-          "export",
-          "import"
-        ],
-        "next": "*"
-      },
-      {
-        "blankLine": "any",
-        "prev": [
-          "export",
-          "import"
-        ],
-        "next": [
-          "export",
-          "import"
-        ]
-      }
-    ],
-    "@typescript-eslint/no-floating-promises": "error",
-    "@typescript-eslint/no-misused-promises": "error",
-    "@typescript-eslint/no-unused-vars": "error",
-    "@typescript-eslint/no-explicit-any": "off"
+  "env": {
+    "node": true
   }
 }
