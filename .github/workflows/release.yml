@@ -2,9 +2,10 @@ on:
   push:
     tags:
       - '*'
-name: goreleaser
+name: Release
 jobs:
-  GoReleaser:
+  goreleaser:
+    name: GoReleaser
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
