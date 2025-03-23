@@ -1,6 +1,6 @@
 # @sergeymakinen/vite-plugin-html-minimize
 
-[![Test](https://github.com/sergeymakinen/vite-plugin-html-minimize/workflows/test/badge.svg)](https://github.com/sergeymakinen/vite-plugin-html-minimize/actions?query=workflow%3Atest)
+[![Test](https://github.com/sergeymakinen/vite-plugin-html-minimize/actions/workflows/test.yml/badge.svg)](https://github.com/sergeymakinen/vite-plugin-html-minimize/actions/workflows/test.yml)
 [![npm](https://img.shields.io/npm/v/@sergeymakinen/vite-plugin-html-minimize)](https://www.npmjs.com/package/@sergeymakinen/vite-plugin-html-minimize)
 [![codecov](https://codecov.io/gh/sergeymakinen/vite-plugin-html-minimize/branch/main/graph/badge.svg)](https://codecov.io/gh/sergeymakinen/vite-plugin-html-minimize)
 
