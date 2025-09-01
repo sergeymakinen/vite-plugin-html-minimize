@@ -22,7 +22,7 @@ jobs:
       - name: Set git to turn off auto-converting line endings
         run: git config --global core.autocrlf false
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Install dependencies
         run: npm install
       - name: Test
